@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">Signal Drift</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+
+    <div id="post"></div>
+
+    <footer>
+        © 2026 Signal Drift
+    </footer>
+
+</div>
+
+<div id="commandPalette">
+    <div class="palette-box">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search posts..."
+        />
+
+        <div id="searchResults"></div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/search.js"></script>
+
+<script>
+async function initPost() {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const file = params.get("file");
+
+    const container = document.getElementById("post");
+
+    if (!file) {
+        container.innerHTML = `<div class="card">Missing post.</div>`;
+        return;
+    }
+
+    try {
+
+        const raw = await loadPost(file);
+
+        const { meta, content } = parseFrontmatter(raw);
+
+        document.title = meta.title;
+
+        container.innerHTML = `
+            <div class="meta">
+                ${meta.category || ""} • ${meta.date || ""}
+            </div>
+
+            <h1>${meta.title}</h1>
+
+            <div class="card">
+                ${marked.parse(content)}
+            </div>
+        `;
+
+    } catch {
+
+        container.innerHTML = `
+            <div class="card">
+                Failed to load post.
+            </div>
+        `;
+    }
+}
+
+initPost();
+</script>
+
+</body>
+</html>

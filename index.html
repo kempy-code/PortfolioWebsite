@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joshua Kemp - Portfolio</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- BRAND -->
+    <div class="logo">Joshua Kemp</div>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+
+    <!-- HERO -->
+    <section
+        style="
+            display:flex;
+            gap:50px;
+            align-items:center;
+            flex-wrap:wrap;
+            margin-top:50px;
+            margin-bottom:70px;
+        "
+    >
+
+        <img
+            src="portrait.jpeg"
+            alt="Joshua Kemp"
+            style="
+                width:220px;
+                height:220px;
+                object-fit:cover;
+                border-radius:28px;
+                border:1px solid var(--border);
+            "
+        />
+
+        <div style="flex:1; min-width:280px;">
+
+            <div
+                style="
+                    color:var(--accent);
+                    font-size:0.9rem;
+                    margin-bottom:12px;
+                    font-weight:600;
+                    letter-spacing:0.04em;
+                "
+            >
+                STUDENT · BUILDER · WRITER
+            </div>
+
+            <h1
+                style="
+                    font-size:4rem;
+                    line-height:1;
+                    margin-bottom:20px;
+                    letter-spacing:-0.05em;
+                "
+            >
+                Joshua Kemp
+            </h1>
+
+            <p
+                style="
+                    font-size:1.15rem;
+                    color:var(--muted);
+                    max-width:700px;
+                    line-height:1.8;
+                "
+            >
+                I explore technology, robotics, philosphy, literature,
+                ethics, and systems thinking through writing and projects.
+                This website is a public space for ideas, essays,
+                experiments, and long-form thinking.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- INTRO GRID -->
+    <section
+        style="
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            gap:18px;
+            margin-bottom:70px;
+        "
+    >
+
+        <div class="card">
+            <div class="meta">Current Focus</div>
+
+            Building coding projects, improving technical depth, and developing clearer thinking
+            through structured writing.
+        </div>
+
+        <div class="card">
+            <div class="meta">Main Interests</div>
+
+            Artificial intelligence, systems design,
+            cognition, philosophy, behavioural psychology,
+            literature, and technological change.
+        </div>
+
+        <div class="card">
+            <div class="meta">Writing Philosophy</div>
+
+            Writing is how I test ideas.
+            Most posts here are not conclusions,
+            they are attempts to understand.
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section style="margin-bottom:70px;">
+
+        <div class="meta" style="margin-bottom:14px;">
+            About
+        </div>
+
+        <h2
+            style="
+                font-size:2.4rem;
+                margin-bottom:24px;
+                letter-spacing:-0.04em;
+            "
+        >
+            Thinking across disciplines.
+        </h2>
+
+        <div
+            style="
+                max-width:760px;
+                font-size:1.05rem;
+                color:var(--muted);
+            "
+        >
+
+            <p>
+                I’m interested in the intersection between technical systems
+                and human systems — how people behave, how ideas spread,
+                how technologies reshape incentives, and how complexity
+                changes decision-making.
+            </p>
+
+            <p>
+                My projects range from robotics and software engineering
+                to long-form essays about cognition, ethics,
+                productivity, and modern technological culture.
+            </p>
+
+            <p>
+                This site exists partly as a portfolio,
+                but mostly as a structured thinking environment.
+                A place to publish unfinished ideas publicly and improve them over time.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURED AREAS -->
+    <section style="margin-bottom:70px;">
+
+        <div class="meta" style="margin-bottom:14px;">
+            Areas of exploration
+        </div>
+
+        <div
+            style="
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+                gap:16px;
+            "
+        >
+
+            <div class="card">
+                <h3>Technology</h3>
+                <p style="color:var(--muted);">
+                    AI systems, software engineering,
+                    future technologies, and infrastructure.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Psychology</h3>
+                <p style="color:var(--muted);">
+                    Cognition, behaviour, motivation,
+                    attention, and human decision-making.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Literature</h3>
+                <p style="color:var(--muted);">
+                    Narrative structure, philosophical fiction,
+                    modern classics, and analysis.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Systems</h3>
+                <p style="color:var(--muted);">
+                    Complexity, incentives,
+                    networks, optimisation, and failure modes.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section style="margin-bottom:70px;">
+
+        <div class="meta" style="margin-bottom:14px;">
+            Projects & Experiments
+        </div>
+
+        <h2
+            style="
+                font-size:2.4rem;
+                margin-bottom:24px;
+                letter-spacing:-0.04em;
+            "
+        >
+            Things I'm building.
+        </h2>
+
+        <p
+            style="
+                color:var(--muted);
+                max-width:760px;
+                margin-bottom:30px;
+            "
+        >
+            A selection of projects, experiments, and ideas I'm currently exploring.
+            Most are ongoing and evolve over time as I learn new skills and discover
+            better approaches.
+        </p>
+
+        <div
+            style="
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+                gap:18px;
+            "
+        >
+
+            <div class="card">
+
+                <div class="meta">Software Project</div>
+
+                <h3 style="margin-bottom:10px;">
+                    SocialStudy
+                </h3>
+
+                <p style="color:var(--muted);">
+                    An educational platform designed to help students learn more
+                    effectively through structured study systems and modern technology.
+                </p>
+
+                <div style="margin-top:15px;">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">Education</span>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="meta">Robotics</div>
+
+                <h3 style="margin-bottom:10px;">
+                    FTC Robotics
+                </h3>
+
+                <p style="color:var(--muted);">
+                    Designing, building, programming, and iterating on competitive
+                    robotics systems while developing engineering and problem-solving skills.
+                </p>
+
+                <div style="margin-top:15px;">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">Engineering</span>
+                    <span class="tag">FTC</span>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="meta">Writing Project</div>
+
+                <h3 style="margin-bottom:10px;">
+                    Public Thinking Blog
+                </h3>
+
+                <p style="color:var(--muted);">
+                    Essays, reflections, and investigations across technology,
+                    psychology, literature, philosophy, and systems thinking.
+                </p>
+
+                <div style="margin-top:15px;">
+                    <span class="tag">Writing</span>
+                    <span class="tag">Ideas</span>
+                    <span class="tag">Research</span>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="meta">Current Experiment</div>
+
+                <h3 style="margin-bottom:10px;">
+                    Future Project
+                </h3>
+
+                <p style="color:var(--muted);">
+                    A placeholder for whatever challenge, idea, or obsession comes next.
+                </p>
+
+                <div style="margin-top:15px;">
+                    <span class="tag">In Progress</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BLOG CTA -->
+    <section style="margin-bottom:70px;">
+
+        <div class="card">
+
+            <div class="meta">Writing</div>
+
+            <h2 style="margin-bottom:14px;">
+                Essays, notes, and unfinished thoughts.
+            </h2>
+
+            <p
+                style="
+                    color:var(--muted);
+                    max-width:700px;
+                    margin-bottom:20px;
+                "
+            >
+                The blog is the core of this site.
+                It contains long-form essays and smaller idea fragments
+                across multiple disciplines.
+            </p>
+
+            <a-
+                href="blog.html"
+                style="
+                    display:inline-block;
+                    padding:12px 18px;
+                    border:1px solid var(--border);
+                    border-radius:999px;
+                    font-weight:600;
+                "
+            >
+                Explore the blog →
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Joshua Kemp
+    </footer>
+
+</div>
+
+<!-- COMMAND PALETTE -->
+<div id="commandPalette">
+
+    <div class="palette-box">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search posts..."
+        />
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/search.js"></script>
+
+</body>
+</html>
