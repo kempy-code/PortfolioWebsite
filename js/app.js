@@ -39,7 +39,7 @@ function parseFrontmatter(md) {
 function renderPostList(posts, container) {
     container.innerHTML = posts.map(post => `
         <div class="card">
-            <a href="post.html?file=${encodeURIComponent(post.file)}">
+            <a href="essay.html?file=${encodeURIComponent(post.file)}">
 
                 <div class="meta">
                     ${post.category || "Uncategorised"} • ${post.date || ""}

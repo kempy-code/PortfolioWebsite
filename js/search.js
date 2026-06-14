@@ -59,7 +59,7 @@ async function initSearch() {
 
         results.innerHTML = filtered.map(post => `
             <a class="search-item"
-               href="post.html?file=${post.file}">
+               href="essay.html?file=${post.file}">
                 ${post.title}
             </a>
         `).join("");
