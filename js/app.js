@@ -1,74 +1,30 @@
-async function fetchPostList() {
-    const res = await fetch("posts/posts.json");
-    return await res.json();
-}
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-async function loadPost(file) {
-    const res = await fetch(`posts/${file}`);
-
-    if (!res.ok) {
-        throw new Error(`Failed to load ${file}`);
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
     }
+  });
+}, { threshold: 0.12 });
 
-    return await res.text();
+document.querySelectorAll('[data-reveal]').forEach((element) => revealObserver.observe(element));
+
+if (!reduceMotion) {
+  const layers = [...document.querySelectorAll('[data-parallax]')];
+  let ticking = false;
+  const updateParallax = () => {
+    const viewportCenter = window.innerHeight / 2;
+    layers.forEach((layer) => {
+      const rect = layer.parentElement.getBoundingClientRect();
+      const offset = (rect.top + rect.height / 2 - viewportCenter) * Number(layer.dataset.parallax);
+      layer.style.setProperty('--parallax-y', `${offset.toFixed(1)}px`);
+    });
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
+  }, { passive: true });
+  updateParallax();
 }
-
-function parseFrontmatter(md) {
-    const meta = {};
-
-    const match = md.match(/---([\s\S]*?)---/);
-
-    if (match) {
-        match[1]
-            .trim()
-            .split("\n")
-            .forEach(line => {
-                const [k, ...v] = line.split(":");
-                meta[k.trim()] = v.join(":").trim();
-            });
-
-        md = md.replace(match[0], "");
-    }
-
-    return {
-        meta,
-        content: md.trim()
-    };
-}
-
-function renderPostList(posts, container) {
-    container.innerHTML = posts.map(post => `
-        <div class="card">
-            <a href="essay.html?file=${encodeURIComponent(post.file)}">
-
-                <div class="meta">
-                    ${post.category || "Uncategorised"} • ${post.date || ""}
-                </div>
-
-                <h3>${post.title}</h3>
-
-            </a>
-        </div>
-    `).join("");
-}
-
-/* PAGE TRANSITIONS */
-
-document.addEventListener("click", e => {
-
-    const link = e.target.closest("a");
-
-    if (!link || link.target === "_blank") return;
-
-    const href = link.getAttribute("href");
-
-    if (!href || href.startsWith("#")) return;
-
-    e.preventDefault();
-
-    document.body.classList.add("page-out");
-
-    setTimeout(() => {
-        window.location.href = href;
-    }, 140);
-});
